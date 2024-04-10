@@ -499,7 +499,7 @@ class ConvLMHeadModel(nn.Module, GenerationMixin):
                     lm_logits, "(n b) s d -> b s (n d)", b=hidden_states.shape[0]
                 )
         CausalLMOutput = namedtuple("CausalLMOutput", ["logits"])
-        return CausalLMOutput(logits=lm_logits), hidden_states
+        return CausalLMOutput(logits=lm_logits), None
 
 
 class DNAEmbeddingModel(nn.Module, GenerationMixin):
